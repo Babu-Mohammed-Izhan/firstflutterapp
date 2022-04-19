@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
 void main() {
-  runApp(const myApp());
+  runApp(const MyApp());
 }
 
-class myApp extends StatelessWidget {
-  const myApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context){
@@ -39,8 +39,11 @@ class _RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build (BuildContext context) {
-
-    body: ListView.builder(
+    return Scaffold(
+  appBar: AppBar(
+      title: const Text('Startup Name Generator'),
+    ),
+  body: ListView.builder(
   padding: const EdgeInsets.all(16.0),
   itemBuilder: /*1*/ (context, i) {
     if (i.isOdd) return const Divider(); /*2*/
@@ -56,6 +59,7 @@ class _RandomWordsState extends State<RandomWords> {
       ),
     );
   },
+),
 );
 }
 }
